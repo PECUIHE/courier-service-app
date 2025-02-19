@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/utils/supabase';
 import { useUser } from '@/context/UserContext';
+import Image from 'next/image';
 
 const Dashboard = () => {
   const { user } = useUser();
@@ -115,7 +116,7 @@ const Dashboard = () => {
           </p>
         </div>
         <div>
-          <img
+          <Image
             src=''
             alt="User Avatar"
             className="size-16 rounded-full border border-gray-300"

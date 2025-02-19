@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface Profile {
@@ -13,7 +14,7 @@ interface AvatarProps {
 const Avatar: React.FC<AvatarProps> = ({ profile }) => {
   return (
     <div className="flex items-center space-x-4">
-      <img src={profile.avatar_url} alt="Avatar" className="w-16 h-16 rounded-full" />
+      <Image src={profile.avatar_url} alt="Avatar" className="w-16 h-16 rounded-full" />
       <div>
         <h3 className="text-xl font-semibold">{profile.name}</h3>
         <p>{profile.email}</p>
