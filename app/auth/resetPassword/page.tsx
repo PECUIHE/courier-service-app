@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { updateUser } from './actions';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
