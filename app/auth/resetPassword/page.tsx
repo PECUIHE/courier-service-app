@@ -8,16 +8,11 @@ import { toast } from 'react-toastify';
 import { useUser } from '@/context/UserContext';
 import Image from 'next/image';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-// import { useSearchParams } from 'next/navigation'; // Import for query params
+
 
 function ResetPassword() {
   const router = useRouter();
   const { setUser } = useUser();
-  // const searchParams = useSearchParams(); // Get search parameters from the URL
-
-  // Token and email from URL parameters
-  // const access_token = searchParams.get('access_token'); 
-  // const email = searchParams.get('email'); // Assuming email is passed in URL
 
   // Show/hide password logic
   const [showP, setShowP] = useState(false);
@@ -32,11 +27,6 @@ function ResetPassword() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   if (!access_token) {
-  //     setError('Invalid or expired reset link.');
-  //   }
-  // }, [access_token]);
 
   const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,12 +36,6 @@ function ResetPassword() {
       setLoading(false);
       return;
     }
-
-    // if (!access_token) {
-    //   setError('Missing reset token.');
-    //   setLoading(false);
-    //   return;
-    // }
 
     setLoading(true);
     setError('');
