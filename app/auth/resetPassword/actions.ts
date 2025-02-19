@@ -6,13 +6,6 @@ export async function updateUser(new_password: string) {
   
   const supabase = await createClient();
 
-  // Ensure that the user is authenticated first
-  // const { data: session, error: sessionError } = await supabase.auth.getSession();
-  
-  // if (sessionError || !session) {
-  //   throw new Error('No active session found. User must be authenticated.');
-  // }
-
   const { error } = await supabase.auth.updateUser({ 
     password: new_password, 
   });
