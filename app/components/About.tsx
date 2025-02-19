@@ -10,7 +10,7 @@ export default function About() {
       id: '1',
       title: 'We serve you with full responsibility and convenience',
       description:
-        'We will serve you wholeheartedly to give you the best experience when using our services and provide comfort when we deliver your ordered parcels, prioritizing every customer’s satisfaction. Items are always neatly packed and ready to be shipped.',
+        'We are dedicated to give you a top-notch experience, ensuring your parcels are packed with care and delivered with customer’s satisfaction in mind.',
       image: '/allFeatures.png', // You can replace this with an actual image/icon
     },
     {
@@ -18,7 +18,7 @@ export default function About() {
       title: 'highly accurate and secure location integration',
       description:
         'We deliver your package according to the destination address with very accurate location integration.',
-      image: '/tracking-order.png',
+      image: '/bus-delivery.png',
     },
     {
       id: '3',
@@ -46,45 +46,49 @@ export default function About() {
               key={feature.id}
               className="bg-red-100  items-center justify-between rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
             >
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">
+              <h3 className="capitalize mt-4 text-xl font-semibold text-gray-900">
                 {feature.title}
               </h3>
               {feature.id !== 'reverse' && (
               <div className='p-4 flex flex-row items-center justify-between gap-4'>  
-                <div className="text-4xl">
+                <div className="w-1/2 h-full">
                   <Image
                     src={feature.image}
-                    width={1000}
-                    height={1000}
+                    width={500}
+                    height={500}
                     alt={feature.title}
                   />
                 </div>
-                <p className="mt-2 text-gray-600 text-sm md:text-base">{feature.description}</p>
+                <div className='w-1/2'>
+                  <p className="mt-2 text-gray-600 text-justify text-sm md:text-base">{feature.description}</p>
+                </div>
               </div>
               )}
               {feature.id === 'reverse' && (
                 <div className='p-4 flex flex-row-reverse items-center justify-between gap-4'>
-                  <div className="text-4xl">
-                  <Image
-                    src={feature.image}
-                    width={1000}
-                    height={1000}
-                    alt={feature.title}
-                  />
-                </div>
-                <p className="mt-2 text-gray-600 text-sm md:text-base">{feature.description}</p>
+                  <div className="w-1/2 h-full">
+                    <Image
+                      src={feature.image}
+                      width={500}
+                      height={500}
+                      alt={feature.title}
+                    />
+                  </div>
+                  <div className='w-1/2'>
+                    <p className="mt-2 text-gray-600 text-justify text-sm md:text-base">{feature.description}</p>
+                  </div>
                 </div>
               )}
               
               <div className='mt-2 flex flex-row items-center justify-center gap-4'>
               <Link
-                  href="/signup"
+                  href="/auth/signup"
                   className="bg-red-500 text-white px-4 py-2 rounded-md capitalize hover:bg-red-600"
                 >
                   learn more
                 </Link>
                 <Link
-                  href="/login"
+                  href="/auth/login"
                   className="border-2 border-red-500 text-red-600 px-4 py-2 rounded-md capitalize hover:bg-red-100"
                 >
                   Try it now

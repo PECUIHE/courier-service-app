@@ -8,7 +8,7 @@ export default function Footer() {
     <section className=' py-12 px-8 bg-red-100 text-gray-900'>
         <div className='container mx-auto'>
             <div className='footer-links flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
-                <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <Link href="#">

@@ -30,7 +30,7 @@ export default function Hero() {
                 </p>
                 <div className="mt-6 flex justify-center space-x-4">
                     <Link
-                        href="/signup"
+                        href="/auth/signup"
                         className="bg-red-500 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-red-600"
                     >
                         Get Started

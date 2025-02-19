@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 p-4">
-            <Link href="#">
+            <Link href="/">
               <Image
                 src={Logo}
                 alt="Logo"
@@ -54,14 +54,14 @@ export default function Navbar() {
             </li>
             
             <Link
-              href="/login"
+              href="/auth/login"
               className="border-2 border-red-500 text-red-600 px-4 py-2 rounded-md capitalize hover:bg-red-100"
             >
               login
             </Link>
 
             <Link
-              href="/signup"
+              href="/auth/signup"
               className="bg-red-500 text-white px-4 py-2 rounded-md capitalize hover:bg-red-600"
             >
               sign up
@@ -148,14 +148,14 @@ export default function Navbar() {
             </li>
 
             <Link
-              href="/login"
+              href="/auth/login"
               className="block border-2 border-red-500 text-red-600 text-center px-4 py-2 rounded-md hover:bg-red-100 capitalize"
             >
               Login
             </Link>
 
             <Link
-              href="/signup"
+              href="/auth/signup"
               className="block bg-red-500 text-white text-center px-4 py-2 rounded-md hover:bg-red-600 capitalize"
             >
               sign up

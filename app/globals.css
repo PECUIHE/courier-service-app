@@ -30,9 +30,9 @@ body {
   margin-bottom: 5px;
 }
 
-/* .footer-links p{
-  font-size: 10px;
-} */
+.footer-links p{
+  font-size: 14px;
+}
 
 .spinner {
   border-width: 2px;
@@ -46,6 +46,10 @@ body {
 }
 
 @keyframes spin {
+  from
+  0% {
+    transform: rotate(0deg);
+  }
   to {
     transform: rotate(360deg);
   }
