@@ -10,6 +10,7 @@ interface User {
   first_name: string;
   last_name: string;
   phone?: string;
+  avatar_url?: string;
 }
 
 interface UserContextType {
@@ -46,6 +47,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
           first_name: data.user.user_metadata?.first_name || '',
           last_name: data.user.user_metadata?.last_name || '',
           phone: data.user.user_metadata?.phone || '',
+          avatar_url: data.user.user_metadata?.avatar_url || '',
         });
       }
     };
