@@ -1,3 +1,5 @@
+"use client";
+
 import LocationTracker from '@/app/components/LocationTracker'
 import React from 'react'
 

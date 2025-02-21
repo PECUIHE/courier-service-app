@@ -168,9 +168,9 @@ const UserDashboard = () => {
         )}
       </div>
 
-      <div>
+      {/* <div> */}
         {/* <LocationTracker /> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };
