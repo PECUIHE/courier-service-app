@@ -57,6 +57,13 @@ function ResetPassword() {
       return;
     }
 
+    if (!email) {
+      setError('Email is missing from the URL.');
+      setLoading(false);
+      return;
+    }
+    
+
     setLoading(true);
     setError('');
 
@@ -206,4 +213,25 @@ export default function ResetPage() {
     </Suspense>
   );
 }
+
+
+
+
+
+
+// Disable Specific ESLint Rule: If there is a specific ESLint error that you want to disable for a line or block of code, you can use a comment to disable the rule. For example, if ESLint complains about the null or undefined value for email, you can add a comment like this:
+
+// ts
+// Copy code
+
+// // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+// const email = searchParams.get('email');
+
+// These should help ensure that your code is safe and ESLint-friendly while working with the email value from the URL parameters.
+
+
+// const email = searchParams.get('email') ?? ''; // Default to an empty string if null or undefined
+
+
+// const email: string | null = searchParams.get('email');
 

@@ -12,6 +12,7 @@ const Avatar = () => {
     // Fetch Profile of the verified/authenticated user from Supabase
     useEffect(() => {
       const fetchData = async () => {
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         const { data: { user } } = await supabase.auth.getUser();
       };
       fetchData();
