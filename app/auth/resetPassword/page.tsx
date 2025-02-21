@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { updateUser } from './actions';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -8,11 +8,18 @@ import { toast } from 'react-toastify';
 import { useUser } from '@/context/UserContext';
 import Image from 'next/image';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Loading from '@/app/loading';
+import { useSearchParams } from 'next/navigation'; // Import for query params
 
 
 function ResetPassword() {
   const router = useRouter();
   const { setUser } = useUser();
+  const searchParams = useSearchParams(); // Get search parameters from the URL
+
+  // Token and email from URL parameters
+  const access_token = searchParams.get('access_token'); 
+  const email = searchParams.get('email'); // Assuming email is passed in URL
 
   // Show/hide password logic
   const [showP, setShowP] = useState(false);
@@ -28,11 +35,24 @@ function ResetPassword() {
   const [loading, setLoading] = useState(false);
 
 
+  useEffect(() => {
+    if (!access_token) {
+      setError('Invalid or expired reset link.');
+    }
+  }, [access_token]);
+
+
   const handleResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match.');
+      setLoading(false);
+      return;
+    }
+
+    if (!access_token) {
+      setError('Missing reset token.');
       setLoading(false);
       return;
     }
@@ -51,9 +71,11 @@ function ResetPassword() {
       if (err instanceof Error) {
         toast.error(err.message);
         setError(err.message);
+        // setTimeout(() => setError(''), 5000); // Clear error after 5 seconds
       } else {
         toast.error('Error resetting password.');
         setError('Error resetting password.');
+        // setTimeout(() => setError(''), 5000); // Clear error after 5 seconds
       }
     } finally {
       setLoading(false);
@@ -179,7 +201,7 @@ function ResetPassword() {
 
 export default function ResetPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <ResetPassword />
     </Suspense>
   );

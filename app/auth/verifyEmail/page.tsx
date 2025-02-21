@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
+import Loading from '@/app/loading';
 
 
 function CodeInput({ length = 6, onChange }: { length?: number; onChange: (code: string) => void }) {
@@ -175,7 +176,7 @@ function VerifyComponent() {
 // Main component with Suspense boundary
 export default function VerifyPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <VerifyComponent />
     </Suspense>
   );

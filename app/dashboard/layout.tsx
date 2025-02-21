@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, Suspense } from 'react';
 import { useUser } from '@/context/UserContext';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';
@@ -12,6 +12,8 @@ import { IoNotificationsOutline } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import { FaShippingFast } from 'react-icons/fa';
 import { TbLogout, TbStatusChange } from 'react-icons/tb';
+import Avatar from '../components/Avatar';
+import Loading from '../loading';
 
 interface LayoutProps {
   children: ReactNode;
@@ -52,13 +54,15 @@ export default function DashboardLayout({ children }: LayoutProps) {
 
         {/* Logo */}
         <div className="text-center mb-4">
-          <Image
-            src="/courier-logo.png" // Replace with your actual logo path
-            alt="Company Logo"
-            width={80}
-            height={80}
-            className="mx-auto"
-          />
+          <Link href='/'>
+            <Image
+              src="/courier-logo.png" // Replace with your actual logo path
+              alt="Company Logo"
+              width={80}
+              height={80}
+              className="mx-auto"
+            />
+          </Link>
         </div>
 
         {/* Menu Items */}
@@ -90,15 +94,18 @@ export default function DashboardLayout({ children }: LayoutProps) {
       {/* Main Content */}
       <div className="flex-1">
         {/* Mobile Header */}
-        <header className="flex items-center p-4 border-b border-gray-300 md:hidden">
+        <header className="p-4 flex items-center justify-between gap-8 border-b border-gray-300 md:hidden">
           <button className="text-xl text-gray-700" onClick={() => setMenuOpen(true)}>
             {/* ☰ */}
             <LuMenu />
           </button>
+          <Avatar />
         </header>
 
         {/* Main Content */}
-        <main className="p-6">{children}</main>
+        <Suspense fallback={<Loading />}>
+          <main className="p-6">{children}</main>
+        </Suspense>
       </div>
     </div>
   );

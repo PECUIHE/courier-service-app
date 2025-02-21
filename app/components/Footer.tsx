@@ -23,7 +23,7 @@ export default function Footer() {
                     </div>
                 
                     <div className='flex flex-col  gap-1'>
-                        <h1 className='font-semibold text-[18px] '>About Us</h1>
+                        <h1 className='font-semibold text-[18px] animate-pulse'>About Us</h1>
                         <ul>
                             <li>
                                 <Link href="#about">About us</Link>
@@ -41,7 +41,7 @@ export default function Footer() {
                     </div>
 
                     <div className='flex flex-col '>
-                        <h1 className='font-semibold text-[18px]'>Useful Links</h1>
+                        <h1 className='font-semibold text-[18px] animate-pulse'>Useful Links</h1>
                         <ul>
                             <li>
                                 <Link href="#">Returns</Link>
@@ -60,7 +60,7 @@ export default function Footer() {
                     </div>
 
                     <div className='flex flex-col '>
-                        <h1 className='font-semibold text-[18px]'>Follow Us</h1>
+                        <h1 className='font-semibold text-[18px] animate-pulse'>Follow Us</h1>
                         <ul>
                             <li>
                                 <a href="https://www.matrikshub.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -78,7 +78,7 @@ export default function Footer() {
                     </div>
 
                     <div className='flex flex-col '>
-                        <h1 className='font-semibold text-[18px]'>Subscribe</h1>
+                        <h1 className='font-semibold text-[18px] animate-pulse'>Subscribe</h1>
                         <ul>
                             <div className=' lg:w-[75%] pt-1'>
                                 <p>Get our weekly newsletters.</p>
@@ -86,12 +86,13 @@ export default function Footer() {
                             
                             <form className='mt-2 flex gap-4'>
                                 <input
-                                    className='p-2'
+                                    className='p-2 rounded-md'
                                     placeholder='Enter your email here.' 
                                 />
                                 <button 
                                     type='submit'
-                                    className='bg-red-500 text-white font-semibold p-2 rounded-md'>
+                                    className='bg-red-500 text-white font-semibold p-2 rounded-md animate-bounce'
+                                >
                                     SUBSCRIBE
                                 </button>
                             </form>

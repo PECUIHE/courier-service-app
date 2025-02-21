@@ -24,6 +24,8 @@ export default function RegisterPage() {
   });
   const [loading, setLoading] = useState(false); // Spinner state
   const [error, setError] = useState('');
+  const [termsAccepted, setTermsAccepted] = useState(false); // New state for checkbox
+
 
   const validateForm = () => {
     const { first_name, last_name, email, password, confirmPassword } = formData;
@@ -44,6 +46,12 @@ export default function RegisterPage() {
     if (password !== confirmPassword) {
       toast.error('Passwords do not match');
       setError('Passwords do not match.');
+      return false;
+    }
+
+    if (!termsAccepted) {
+      toast.error('You must accept the Terms and Conditions.');
+      setError('You must accept the Terms and Conditions.');
       return false;
     }
 
@@ -89,6 +97,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="container m-4 w-full max-w-md bg-white px-6 py-4 rounded-lg shadow-lg">
+        {/* Form header */}
         <div className="text-center mb-4">
           <Link href="/">
             <Image
@@ -227,8 +236,15 @@ export default function RegisterPage() {
 
           {/* Terms and Conditions Checkbox */}
           <div className='text-[14px] flex gap-2 text-gray-700'>
-            <input type="checkbox" name='' id='' className='' />
-            <label htmlFor="">
+            <input 
+              type="checkbox" 
+              name='terms' 
+              id='terms'
+              checked={termsAccepted}
+              onChange={(e) => setTermsAccepted(e.target.checked)} 
+              className='cursor-pointer' 
+            />
+            <label htmlFor="terms">
               I agree to the{' '}
               <span className='text-red-500 cursor-pointer hover:underline'>
                 Terms & Conditions

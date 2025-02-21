@@ -1,6 +1,7 @@
 "use client";
 
 import About from "./components/About";
+import Brands from "./components/Brands";
 import Copyright from "./components/Copyright";
 import FAQ from "./components/Faq";
 import Footer from "./components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <Brands />
       <FAQ />
       <Footer />
       <Copyright />

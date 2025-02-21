@@ -35,9 +35,9 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="bg-red-100 py-10">
+    <section id="services" className="bg-red-100 py-16">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-        <h1 className="capitalize text-3xl font-extrabold text-gray-900">
+        <h1 className="capitalize text-3xl md:text-4xl font-extrabold text-gray-900">
           Our Services
         </h1>
         <p className="mt-4 text-lg font-medium text-gray-600 capitalize">
@@ -49,7 +49,7 @@ export default function Services() {
           {steps.map((step, index) => (
             <div
               key={index} style={{ marginBottom: '20px' }}
-              className="flex flex-col items-center bg-white rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
+              className="flex flex-col items-center bg-white rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-105 transition-transform animate-in slide-in-from-bottom duration-1000"
             >
               <div className="flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full text-2xl font-bold">
                 <Image 

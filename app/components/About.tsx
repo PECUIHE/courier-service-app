@@ -30,7 +30,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="bg-white py-16 sm:py-24 lg:py-28">
+    <section id="about" className="bg-white py-16 md:py-24 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
         <h2 className="capitalize text-3xl md:text-4xl font-extrabold text-gray-900">
           Why choose us?
@@ -40,11 +40,11 @@ export default function About() {
         </p>
 
         {/* Features Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-8" data-aos="fade-in">
+        <div className="mt-12 grid grid-cols-1 gap-8">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="bg-red-100  items-center justify-between rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
+              className="bg-red-100  items-center justify-between rounded-lg p-6 shadow-md hover:shadow-lg hover:scale-105 transition-transform animate-in zoom-in duration-1000"
             >
               <h3 className="capitalize mt-4 text-xl font-semibold text-gray-900">
                 {feature.title}

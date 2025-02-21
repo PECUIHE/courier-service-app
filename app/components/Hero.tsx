@@ -5,9 +5,9 @@ import delivery from "/public/hero-delivery.png";
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-r from-red-100 to-white py-16 lg:pt-24 lg:pb-16">
+    <section className="relative bg-gradient-to-r from-red-100 to-white py-16 md:py-24 lg:py-28">
         <div className="pt-6">
-            <h1 className="text-center uppercase text-lg md:text-3xl lg:text-5xl font-bold md:font-extrabold italic text-red-500 animate-pin duration-1000">
+            <h1 className="text-center uppercase text-3xl md:text-4xl lg:text-5xl font-extrabold italic text-red-500 animate-in slide-in-from-left duration-1000">
                 safe and speedy delivery            
             </h1>
         </div>
@@ -15,13 +15,13 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4" >
             <div className="flex flex-col items-center justify-center pt-8 text-center">
                 {/* Text Content */}
-                <h2 className="capitalize italic animate-bounc text-2xl font-extrabold text-gray-900">
+                <h2 className="capitalize italic animate-in slide-in-from-right duration-1000 text-2xl font-extrabold text-gray-900">
                     fastest  
                     <span className="text-red-500"> delivery </span> 
                      & easy 
                     <span className="text-red-500"> pickup</span>
                 </h2>
-                <h1 className="uppercase text-2xl md:text-4xl font-extrabold text-gray-900">
+                <h1 className="uppercase text-2xl md:text-4xl font-extrabold text-gray-900 animate-bounce duration-1000 repeat-1">
                     quick track your package
                 </h1>
                 
@@ -50,7 +50,7 @@ export default function Hero() {
                     <Image
                         src={delivery}
                         alt="Delivery Mockup"
-                        className=" cursor-pointer"
+                        className=" cursor-pointer animate-in slide-in-from-left duration-1000"
                     />
                 </div>
             </div>

@@ -34,9 +34,11 @@ const ForgotPassword = () => {
       if (err instanceof Error) {
         toast.error('Enter your verified email.');
         setError(err.message);
+        // setTimeout(() => setError(''), 5000); // Clear error after 5 seconds
       } else {
         toast.error('An unexpected error occurred. Please try again.');
         setError('An unexpected error occurred. Please try again.');
+        // setTimeout(() => setError(''), 5000); // Clear error after 5 seconds
       }
     } finally {
       setLoading(false);

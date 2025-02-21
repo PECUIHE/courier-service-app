@@ -46,41 +46,41 @@ export default function FAQ() {
       answer:
         'Yes, you can cancel your order if it hasn’t been picked up yet. Cancellation fees may apply.',
     },
-    {
-      question: 'How do refunds work?',
-      answer:
-        'Refunds will be processed for eligible cancellations within 3 business days.',
-    },
-    {
-      question: 'What items are prohibited from shipping?',
-      answer:
-        'Items like hazardous materials, inflammable liquids, perishables, illegal substances, or fragile items may not be shipped.',
-    },
-    {
-      question: 'How should I package my items?',
-      answer:
-        'Ensure items are securely packed to avoid damage during transit. Use bubble wrap or sturdy boxes when needed.',
-    },
-    {
-      question: 'Are my items insured during transit?',
-      answer:
-        'Yes, we offer basic coverage for most shipments. Additional insurance options may be available.',
-    },
-    {
-      question: 'What should I do if my package is lost or damaged?',
-      answer:
-        'Contact our support team immediately via the app or customer service hotline.',
-    },
-    {
-      question: 'What payment methods are accepted?',
-      answer:
-        'We accept credit/debit cards, digital wallets, and in-app payment methods.',
-    },
-    {
-      question: 'Can I get an invoice for my order?',
-      answer:
-        'Yes, you can download your invoice from the order details page in the app.',
-    },
+    // {
+    //   question: 'How do refunds work?',
+    //   answer:
+    //     'Refunds will be processed for eligible cancellations within 3 business days.',
+    // },
+    // {
+    //   question: 'What items are prohibited from shipping?',
+    //   answer:
+    //     'Items like hazardous materials, inflammable liquids, perishables, illegal substances, or fragile items may not be shipped.',
+    // },
+    // {
+    //   question: 'How should I package my items?',
+    //   answer:
+    //     'Ensure items are securely packed to avoid damage during transit. Use bubble wrap or sturdy boxes when needed.',
+    // },
+    // {
+    //   question: 'Are my items insured during transit?',
+    //   answer:
+    //     'Yes, we offer basic coverage for most shipments. Additional insurance options may be available.',
+    // },
+    // {
+    //   question: 'What should I do if my package is lost or damaged?',
+    //   answer:
+    //     'Contact our support team immediately via the app or customer service hotline.',
+    // },
+    // {
+    //   question: 'What payment methods are accepted?',
+    //   answer:
+    //     'We accept credit/debit cards, digital wallets, and in-app payment methods.',
+    // },
+    // {
+    //   question: 'Can I get an invoice for my order?',
+    //   answer:
+    //     'Yes, you can download your invoice from the order details page in the app.',
+    // },
   ];
 
   const toggleFAQ = (index: number) => {
@@ -89,8 +89,8 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 text-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 ">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center">
           Frequently Asked Questions
         </h2>
         <p className="mt-4 text-lg text-gray-600 text-center">
@@ -102,7 +102,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-gray-100 rounded-lg shadow-md p-4 cursor-pointer"
+              className="bg-gray-100 rounded-lg shadow-md p-4 cursor-pointer animate-in slide-in-from-bottom duration-1000"
               onClick={() => toggleFAQ(index)}
             >
               {/* Question */}
